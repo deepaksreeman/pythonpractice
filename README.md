@@ -1,2 +1,2 @@
 # pythonpractice
-try to create web apps with python and learn
+A repository documenting my Python learning journey with practice problems, concepts, and mini-projects.
