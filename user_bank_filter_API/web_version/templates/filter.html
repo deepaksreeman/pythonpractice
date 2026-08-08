@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Currency Filter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>💵 Currency: {{ currency.upper() }}</h1>
+
+    {% if users %}
+
+        {% for user in users %}
+
+            <hr>
+
+            <h3>{{ user["firstName"] }}</h3>
+
+            <p>Username: {{ user["username"] }}</p>
+            <p>Email: {{ user["email"] }}</p>
+            <p>Currency: {{ user["bank"]["currency"] }}</p>
+
+        {% endfor %}
+
+    {% else %}
+
+        <h2>No users found!</h2>
+
+    {% endif %}
+
+    <br>
+    <a href="/">⬅ Back</a>
+
+</body>
+
+</html>

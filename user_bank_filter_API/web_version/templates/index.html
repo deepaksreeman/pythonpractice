@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bank Explorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>🏦 Bank Explorer</h1>
+
+    <form action="/users">
+        <button type="submit">Show All Users</button>
+    </form>
+
+    <br>
+
+    <form action="/search">
+        <input type="text" name="username" placeholder="Enter username">
+        <button type="submit">Search Username</button>
+    </form>
+
+    <br>
+
+    <form action="/filter">
+        <input type="text" name="currency" placeholder="Enter currency">
+        <button type="submit">Filter Currency</button>
+    </form>
+
+    <br>
+
+    <form action="/count">
+        <input type="text" name="currency" placeholder="Enter currency">
+        <button type="submit">Count Currency</button>
+    </form>
+
+</body>
+
+</html>
