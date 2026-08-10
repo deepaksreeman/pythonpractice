@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>StudyVault</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div>
+
+            <h1>StudyVault</h1>
+
+            <p>
+                Your simple space for organized notes.
+            </p>
+
+        </div>
+
+
+        <button
+            id="themeBtn"
+            type="button"
+        >
+            🌙
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-title">
+
+                <h2>My Folders</h2>
+
+            </div>
+
+
+            <button
+                id="addFolderBtn"
+                class="primary-btn"
+            >
+                + New Folder
+            </button>
+
+
+            <div id="folderList"></div>
+
+
+            <!-- Dashboard -->
+
+            <div class="dashboard">
+
+                <h3>StudyVault</h3>
+
+                <div class="stats">
+
+                    <div>
+                        <strong id="folderCount">
+                            0
+                        </strong>
+
+                        <span>Folders</span>
+                    </div>
+
+
+                    <div>
+                        <strong id="noteCount">
+                            0
+                        </strong>
+
+                        <span>Notes</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ================= NOTES AREA ================= -->
+
+        <section class="notes-area">
+
+
+            <div class="notes-header">
+
+                <div>
+
+                    <h2 id="currentFolderTitle">
+                        My Notes
+                    </h2>
+
+                    <p id="noteSubtitle">
+                        Select a folder to begin.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="addNoteBtn"
+                    class="primary-btn"
+                >
+                    + New Note
+                </button>
+
+            </div>
+
+
+
+            <!-- Search -->
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="🔍 Search notes..."
+            >
+
+
+
+            <!-- Notes -->
+
+            <div id="notesList"></div>
+
+
+
+            <!-- ================= EDITOR ================= -->
+
+            <div id="editor">
+
+
+                <input
+                    id="noteTitle"
+                    type="text"
+                    placeholder="Note title"
+                >
+
+
+
+                <!-- Toolbar -->
+
+                <div id="toolbar">
+
+
+                    <button
+                        type="button"
+                        onclick="formatText('bold')"
+                    >
+                        <b>B</b>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="formatText('italic')"
+                    >
+                        <i>I</i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="formatText('underline')"
+                    >
+                        <u>U</u>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="highlightText()"
+                    >
+                        🖍️
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="formatText('insertUnorderedList')"
+                    >
+                        • List
+                    </button>
+
+
+                    <button
+                        type="button"
+                        onclick="formatText('insertOrderedList')"
+                    >
+                        1. List
+                    </button>
+
+                </div>
+
+
+
+                <!-- Editor -->
+
+                <div
+                    id="noteContent"
+                    contenteditable="true"
+                    data-placeholder="Start writing your notes..."
+                ></div>
+
+
+
+                <div class="editor-footer">
+
+                    <span id="saveStatus">
+                        Ready
+                    </span>
+
+
+                    <button
+                        id="saveNoteBtn"
+                        class="primary-btn"
+                    >
+                        Save Note
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

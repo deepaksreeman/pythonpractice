@@ -34,7 +34,6 @@ class Cash(Payment):
             print(f"done!- remaining balance= {self.balance}")
 
 payments=input("enter your choice:1/2/3/4-")
-
 upi = UPI(50000, "1234 5678 4321 6543")
 cred = CreditCard(50000, "1234 5678 4321 6543")
 cas = Cash(50000, "1234 5678 4321 6543")

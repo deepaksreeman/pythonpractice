@@ -1,0 +1,852 @@
+/* ==========================================
+   STUDYVAULT V1
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family:
+        Arial,
+        sans-serif;
+
+    background: #f1f5f9;
+
+    color: #172033;
+
+    min-height: 100vh;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+header {
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #4f46e5
+        );
+
+    color: white;
+
+    padding: 24px 40px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+header h1 {
+    font-size: 32px;
+
+    margin-bottom: 5px;
+}
+
+
+header p {
+    opacity: 0.9;
+
+    font-size: 14px;
+}
+
+
+#themeBtn {
+    background:
+        rgba(255,255,255,0.15);
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.3);
+
+    font-size: 18px;
+
+    padding: 10px 13px;
+}
+
+
+/* ==========================================
+   MAIN
+   ========================================== */
+
+main {
+    display: grid;
+
+    grid-template-columns:
+        250px 1fr;
+
+    gap: 24px;
+
+    max-width: 1250px;
+
+    margin: 30px auto;
+
+    padding:
+        0 20px;
+}
+
+
+/* ==========================================
+   SIDEBAR
+   ========================================== */
+
+.sidebar {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    height: fit-content;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+.sidebar h2 {
+    margin-bottom: 15px;
+}
+
+
+.primary-btn {
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 9px;
+
+    padding:
+        10px 15px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+
+.primary-btn:hover {
+    opacity: 0.9;
+
+    transform:
+        translateY(-1px);
+}
+
+
+#addFolderBtn {
+    width: 100%;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   FOLDERS
+   ========================================== */
+
+#folderList {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.folder-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    padding: 8px;
+
+    border-radius: 9px;
+
+    transition:
+        background 0.15s ease;
+}
+
+
+.folder-item:hover {
+    background: #eff6ff;
+}
+
+
+.folder-name {
+    cursor: pointer;
+
+    flex: 1;
+
+    font-size: 14px;
+}
+
+
+.folder-options {
+    background: transparent;
+
+    color: #64748b;
+
+    padding:
+        4px 7px;
+
+    font-size: 16px;
+}
+
+
+.folder-options:hover {
+    background: #e2e8f0;
+}
+
+
+/* ==========================================
+   DASHBOARD
+   ========================================== */
+
+.dashboard {
+    margin-top: 25px;
+
+    border-top:
+        1px solid #e2e8f0;
+
+    padding-top: 18px;
+}
+
+
+.dashboard h3 {
+    font-size: 14px;
+
+    margin-bottom: 12px;
+
+    color: #64748b;
+}
+
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+}
+
+
+.stats div {
+    background: #f8fafc;
+
+    border-radius: 9px;
+
+    padding: 10px;
+
+    text-align: center;
+}
+
+
+.stats strong {
+    display: block;
+
+    font-size: 20px;
+
+    color: #2563eb;
+}
+
+
+.stats span {
+    font-size: 11px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   NOTES AREA
+   ========================================== */
+
+.notes-area {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    min-height: 650px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+.notes-header {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+
+.notes-header h2 {
+    margin-bottom: 4px;
+}
+
+
+.notes-header p {
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   SEARCH
+   ========================================== */
+
+#searchInput {
+    width: 100%;
+
+    padding:
+        12px 14px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    margin-bottom: 18px;
+
+    background: white;
+
+    color: #172033;
+}
+
+
+#searchInput:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37,99,235,0.12);
+}
+
+
+/* ==========================================
+   NOTES GRID
+   ========================================== */
+
+#notesList {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(220px, 1fr)
+        );
+
+    gap: 15px;
+}
+
+
+/* ==========================================
+   NOTE CARD
+   ========================================== */
+
+.note-card {
+    background: #f8fafc;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    padding: 16px;
+
+    min-height: 130px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.note-card:hover {
+    transform:
+        translateY(-3px);
+
+    border-color: #93c5fd;
+
+    box-shadow:
+        0 8px 22px
+        rgba(37,99,235,0.12);
+}
+
+
+.note-card.pinned {
+    border-color: #f59e0b;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffbeb,
+            #fff
+        );
+}
+
+
+.note-card-title {
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    padding-right: 45px;
+
+    word-break: break-word;
+}
+
+
+.note-preview {
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    height: 40px;
+
+    overflow: hidden;
+
+    margin-bottom: 12px;
+}
+
+
+.note-time {
+    font-size: 11px;
+
+    color: #94a3b8;
+}
+
+
+.note-actions {
+    position: absolute;
+
+    right: 10px;
+
+    top: 10px;
+
+    display: flex;
+
+    gap: 3px;
+}
+
+
+.note-actions button {
+    background: transparent;
+
+    color: #64748b;
+
+    padding:
+        4px 6px;
+
+    font-size: 15px;
+}
+
+
+.note-actions button:hover {
+    background: #e2e8f0;
+}
+
+
+.note-actions .delete-btn:hover {
+    color: #ef4444;
+}
+
+
+/* ==========================================
+   PIN
+   ========================================== */
+
+.pin-btn.pinned {
+    color: #f59e0b;
+}
+
+
+/* ==========================================
+   EDITOR
+   ========================================== */
+
+#editor {
+    margin-top: 25px;
+
+    border-top:
+        1px solid #e2e8f0;
+
+    padding-top: 25px;
+}
+
+
+#noteTitle {
+    width: 100%;
+
+    padding: 13px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+
+    outline: none;
+
+    background: white;
+
+    color: #172033;
+}
+
+
+#noteTitle:focus {
+    border-color: #2563eb;
+}
+
+
+/* ==========================================
+   TOOLBAR
+   ========================================== */
+
+#toolbar {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    padding: 9px;
+
+    background: #f8fafc;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-bottom: none;
+
+    border-radius:
+        10px 10px 0 0;
+}
+
+
+#toolbar button {
+    background: white;
+
+    color: #172033;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    padding:
+        7px 10px;
+
+    cursor: pointer;
+}
+
+
+#toolbar button:hover {
+    background: #eff6ff;
+}
+
+
+/* ==========================================
+   EDITOR CONTENT
+   ========================================== */
+
+#noteContent {
+    min-height: 280px;
+
+    padding: 16px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius:
+        0 0 10px 10px;
+
+    outline: none;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    background: white;
+
+    color: #172033;
+}
+
+
+#noteContent:focus {
+    border-color: #2563eb;
+}
+
+
+#noteContent:empty:before {
+    content: attr(data-placeholder);
+
+    color: #94a3b8;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   EDITOR FOOTER
+   ========================================== */
+
+.editor-footer {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+
+#saveStatus {
+    font-size: 12px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   SEARCH HIGHLIGHT
+   ========================================== */
+
+mark.search-highlight {
+    background: yellow;
+
+    color: black;
+
+    padding:
+        1px 3px;
+
+    border-radius: 3px;
+}
+
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.empty-state {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 45px 20px;
+
+    color: #94a3b8;
+}
+
+
+.empty-state strong {
+    display: block;
+
+    color: #64748b;
+
+    margin-bottom: 6px;
+}
+
+
+/* ==========================================
+   DARK MODE
+   ========================================== */
+
+body.dark {
+    background: #0f172a;
+
+    color: #e2e8f0;
+}
+
+
+body.dark .sidebar,
+body.dark .notes-area {
+    background: #1e293b;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.25);
+}
+
+
+body.dark .note-card {
+    background: #172033;
+
+    border-color: #334155;
+}
+
+
+body.dark .note-card:hover {
+    border-color: #3b82f6;
+}
+
+
+body.dark .note-card.pinned {
+    background: #292314;
+
+    border-color: #f59e0b;
+}
+
+
+body.dark #searchInput,
+body.dark #noteTitle,
+body.dark #noteContent {
+    background: #0f172a;
+
+    color: #e2e8f0;
+
+    border-color: #475569;
+}
+
+
+body.dark #toolbar {
+    background: #172033;
+
+    border-color: #334155;
+}
+
+
+body.dark #toolbar button {
+    background: #1e293b;
+
+    color: #e2e8f0;
+
+    border-color: #475569;
+}
+
+
+body.dark .stats div {
+    background: #172033;
+}
+
+
+body.dark .dashboard {
+    border-color: #334155;
+}
+
+
+body.dark .folder-item:hover {
+    background: #172033;
+}
+
+
+body.dark .folder-options:hover,
+body.dark .note-actions button:hover {
+    background: #334155;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 750px) {
+
+    header {
+        padding: 20px;
+    }
+
+
+    header h1 {
+        font-size: 27px;
+    }
+
+
+    main {
+        grid-template-columns: 1fr;
+
+        margin-top: 20px;
+
+        padding: 0 12px;
+    }
+
+
+    .sidebar {
+        width: 100%;
+    }
+
+
+    .notes-area {
+        padding: 18px;
+    }
+
+
+    .notes-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    #addNoteBtn {
+        width: 100%;
+    }
+
+
+    #notesList {
+        grid-template-columns: 1fr;
+    }
+
+}
