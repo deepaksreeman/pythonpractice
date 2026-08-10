@@ -850,3 +850,22 @@ body.dark .note-actions button:hover {
     }
 
 }
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.brand h1 {
+    margin: 0;
+}
+
+.brand p {
+    margin: 5px 0 0;
+}
